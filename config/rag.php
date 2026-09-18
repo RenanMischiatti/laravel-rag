@@ -1,8 +1,8 @@
 <?php
 
 return [
-    'context_limit' => 5,
-    'minimum_similarity' => 0.35,
+    'context_limit' => 3,
+    'minimum_similarity' => 0.40,
     'timeout' => 300,
 
     'agent' => [

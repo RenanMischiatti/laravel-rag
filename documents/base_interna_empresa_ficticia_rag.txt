@@ -1,0 +1,599 @@
+BASE INTERNA FICTÍCIA PARA TESTES DE RAG
+Empresa: Renan Tecnologia Ltda.
+Data de referência: 31/12/2026
+Natureza: empresa fictícia de tecnologia, SaaS, pagamentos e analytics.
+IMPORTANTE: todos os nomes, números, políticas e eventos deste documento são fictícios e foram criados exclusivamente para testes de software, embeddings, chunking, busca vetorial e RAG.
+
+============================================================
+1. VISÃO GERAL DA EMPRESA
+============================================================
+
+A Renan Tecnologia Ltda. foi fundada em 2019 e possui sede administrativa fictícia em São José dos Campos, São Paulo. A empresa desenvolve soluções de gestão comercial, automação de pagamentos e análise de dados para pequenas e médias empresas.
+
+Principais áreas:
+- Engenharia
+- Produto
+- Vendas
+- Marketing
+- Financeiro
+- Recursos Humanos
+- Suporte
+- Operações
+- Administrativo
+
+Total de colaboradores em 31/12/2026: 30.
+Modelo de trabalho: híbrido, com possibilidade de trabalho remoto conforme política interna.
+Jornada padrão: 40 horas semanais.
+Horário de referência: 09:00 às 18:00, com uma hora de intervalo.
+Período fiscal: janeiro a dezembro.
+Moeda funcional: real brasileiro (BRL).
+
+Principais produtos:
+- NexaFlow Basic
+- NexaFlow Pro
+- NexaFlow Enterprise
+- NexaPay
+- NexaInsights
+
+============================================================
+2. POLÍTICAS INTERNAS
+============================================================
+
+2.1 Política de férias
+Cada colaborador CLT possui direito padrão a 30 dias de férias por período aquisitivo completo de 12 meses.
+As férias devem ser solicitadas com pelo menos 30 dias de antecedência.
+O período mínimo recomendado para um bloco de férias é de 5 dias.
+A empresa permite fracionamento em até 3 períodos, respeitando a legislação aplicável e a aprovação da liderança.
+Até 10 dias podem ser convertidos em abono pecuniário quando permitido e solicitado no prazo adequado.
+A prioridade de aprovação considera continuidade operacional, férias já aprovadas da equipe e ordem da solicitação.
+Os saldos individuais apresentados neste documento representam os dias disponíveis em 31/12/2026.
+
+2.2 Trabalho remoto
+Colaboradores das áreas de Engenharia, Produto, Marketing, Financeiro e RH podem trabalhar remotamente até 3 dias por semana.
+Suporte e Operações podem trabalhar remotamente até 2 dias por semana, conforme escala.
+Administrativo deve comparecer presencialmente no mínimo 4 dias por semana.
+Exceções podem ser aprovadas pelo gestor e pelo RH.
+O auxílio home office padrão é de R$ 180,00 por mês para colaboradores elegíveis.
+
+2.3 Equipamentos
+A empresa fornece notebook corporativo.
+Monitores externos são fornecidos para Engenharia, Produto, Financeiro e colaboradores que possuam necessidade aprovada.
+Equipamentos devem ser devolvidos no desligamento.
+Não é permitido instalar software sem licença ou sem aprovação quando houver risco de segurança.
+
+2.4 Segurança da informação
+Autenticação multifator é obrigatória nos sistemas corporativos.
+Senhas não podem ser compartilhadas.
+Documentos financeiros, dados de clientes e informações estratégicas são classificados como confidenciais.
+Incidentes de segurança devem ser reportados imediatamente ao time de Engenharia/DevOps e à liderança.
+Backups dos sistemas críticos são realizados diariamente.
+A retenção padrão de logs de aplicação é de 180 dias.
+
+2.5 Reembolso
+Despesas corporativas de até R$ 500 podem ser reembolsadas mediante comprovante e aprovação do gestor.
+Despesas acima de R$ 500 exigem aprovação prévia do Financeiro.
+O prazo padrão de pagamento de reembolso é de até 10 dias úteis.
+
+2.6 Benefícios
+Vale-refeição padrão: R$ 900,00 por mês.
+Vale-alimentação adicional: R$ 250,00 por mês.
+Auxílio home office: R$ 180,00 por mês para elegíveis.
+Plano de saúde: coparticipação conforme uso.
+Seguro de vida: cobertura padrão corporativa.
+Budget anual de treinamento: R$ 2.500,00 por colaborador.
+
+2.7 Avaliação de desempenho
+A avaliação formal ocorre duas vezes ao ano, em junho e dezembro.
+Os eixos avaliados são entrega, qualidade, colaboração, autonomia e alinhamento aos objetivos da empresa.
+Promoções não são automáticas e dependem de performance, orçamento e existência de escopo compatível.
+
+============================================================
+3. COLABORADORES E SALDOS DE FÉRIAS
+============================================================
+
+01. Ana Martins | Área: Engenharia | Cargo: Backend Developer | Admissão: 2022-03-14 | Direito anual: 30 dias | Saldo disponível em 31/12/2026: 18 dias.
+02. Bruno Ferreira | Área: Engenharia | Cargo: Frontend Developer | Admissão: 2023-01-09 | Direito anual: 30 dias | Saldo disponível em 31/12/2026: 10 dias.
+03. Carla Souza | Área: Engenharia | Cargo: QA Engineer | Admissão: 2024-05-06 | Direito anual: 30 dias | Saldo disponível em 31/12/2026: 22 dias.
+04. Diego Almeida | Área: Engenharia | Cargo: DevOps Engineer | Admissão: 2021-11-22 | Direito anual: 30 dias | Saldo disponível em 31/12/2026: 8 dias.
+05. Eduarda Lima | Área: Engenharia | Cargo: Tech Lead | Admissão: 2020-08-17 | Direito anual: 30 dias | Saldo disponível em 31/12/2026: 15 dias.
+06. Felipe Rocha | Área: Engenharia | Cargo: Backend Developer | Admissão: 2023-07-03 | Direito anual: 30 dias | Saldo disponível em 31/12/2026: 30 dias.
+07. Gabriela Nunes | Área: Engenharia | Cargo: Data Analyst | Admissão: 2024-02-12 | Direito anual: 30 dias | Saldo disponível em 31/12/2026: 12 dias.
+08. Henrique Costa | Área: Engenharia | Cargo: Full Stack Developer | Admissão: 2022-10-10 | Direito anual: 30 dias | Saldo disponível em 31/12/2026: 6 dias.
+09. Isabela Mendes | Área: Produto | Cargo: Product Manager | Admissão: 2021-04-05 | Direito anual: 30 dias | Saldo disponível em 31/12/2026: 20 dias.
+10. João Ribeiro | Área: Produto | Cargo: Product Designer | Admissão: 2023-09-18 | Direito anual: 30 dias | Saldo disponível em 31/12/2026: 14 dias.
+11. Karen Oliveira | Área: Produto | Cargo: UX Researcher | Admissão: 2024-06-03 | Direito anual: 30 dias | Saldo disponível em 31/12/2026: 27 dias.
+12. Lucas Cardoso | Área: Vendas | Cargo: Account Executive | Admissão: 2022-01-24 | Direito anual: 30 dias | Saldo disponível em 31/12/2026: 9 dias.
+13. Mariana Campos | Área: Vendas | Cargo: Account Executive | Admissão: 2023-03-13 | Direito anual: 30 dias | Saldo disponível em 31/12/2026: 16 dias.
+14. Nicolas Barros | Área: Vendas | Cargo: SDR | Admissão: 2025-01-20 | Direito anual: 30 dias | Saldo disponível em 31/12/2026: 25 dias.
+15. Olivia Freitas | Área: Vendas | Cargo: Sales Manager | Admissão: 2020-05-11 | Direito anual: 30 dias | Saldo disponível em 31/12/2026: 7 dias.
+16. Paulo Gomes | Área: Marketing | Cargo: Growth Analyst | Admissão: 2022-06-27 | Direito anual: 30 dias | Saldo disponível em 31/12/2026: 11 dias.
+17. Queila Santos | Área: Marketing | Cargo: Content Analyst | Admissão: 2024-01-15 | Direito anual: 30 dias | Saldo disponível em 31/12/2026: 19 dias.
+18. Rafael Teixeira | Área: Marketing | Cargo: Performance Analyst | Admissão: 2023-08-07 | Direito anual: 30 dias | Saldo disponível em 31/12/2026: 13 dias.
+19. Sabrina Moraes | Área: Financeiro | Cargo: Financial Analyst | Admissão: 2022-09-19 | Direito anual: 30 dias | Saldo disponível em 31/12/2026: 24 dias.
+20. Thiago Azevedo | Área: Financeiro | Cargo: Controller | Admissão: 2021-02-08 | Direito anual: 30 dias | Saldo disponível em 31/12/2026: 17 dias.
+21. Ursula Pires | Área: RH | Cargo: People Analyst | Admissão: 2023-04-17 | Direito anual: 30 dias | Saldo disponível em 31/12/2026: 21 dias.
+22. Vinicius Duarte | Área: RH | Cargo: HR Manager | Admissão: 2020-10-26 | Direito anual: 30 dias | Saldo disponível em 31/12/2026: 5 dias.
+23. Wesley Prado | Área: Suporte | Cargo: Support Analyst | Admissão: 2024-03-04 | Direito anual: 30 dias | Saldo disponível em 31/12/2026: 28 dias.
+24. Yasmin Lopes | Área: Suporte | Cargo: Support Analyst | Admissão: 2025-02-10 | Direito anual: 30 dias | Saldo disponível em 31/12/2026: 30 dias.
+25. Zeca Moura | Área: Suporte | Cargo: Support Coordinator | Admissão: 2022-12-05 | Direito anual: 30 dias | Saldo disponível em 31/12/2026: 4 dias.
+26. Amanda Torres | Área: Operações | Cargo: Operations Analyst | Admissão: 2023-11-06 | Direito anual: 30 dias | Saldo disponível em 31/12/2026: 23 dias.
+27. Bernardo Reis | Área: Operações | Cargo: Operations Manager | Admissão: 2021-07-12 | Direito anual: 30 dias | Saldo disponível em 31/12/2026: 10 dias.
+28. Cecília Faria | Área: Operações | Cargo: Logistics Analyst | Admissão: 2024-04-22 | Direito anual: 30 dias | Saldo disponível em 31/12/2026: 26 dias.
+29. Daniel Vieira | Área: Administrativo | Cargo: Administrative Assistant | Admissão: 2025-03-10 | Direito anual: 30 dias | Saldo disponível em 31/12/2026: 30 dias.
+30. Elaine Castro | Área: Administrativo | Cargo: Office Manager | Admissão: 2022-05-16 | Direito anual: 30 dias | Saldo disponível em 31/12/2026: 8 dias.
+
+Distribuição por área em 31/12/2026:
+- Administrativo: 2 colaboradores.
+- Engenharia: 8 colaboradores.
+- Financeiro: 2 colaboradores.
+- Marketing: 3 colaboradores.
+- Operações: 3 colaboradores.
+- Produto: 3 colaboradores.
+- RH: 2 colaboradores.
+- Suporte: 3 colaboradores.
+- Vendas: 4 colaboradores.
+
+============================================================
+4. RESULTADOS FINANCEIROS MENSAIS
+============================================================
+
+As receitas abaixo representam faturamento reconhecido no mês.
+Custos incluem custo direto de serviços, folha, marketing, infraestrutura, operações, impostos e perdas extraordinárias quando aplicável.
+Lucro líquido operacional simplificado = Receita - Custos totais.
+Valores são fictícios.
+
+Formato:
+Mês | Receita | Custos totais | Lucro/Prejuízo | Observação
+
+2025-01 | R$ 988.810,00 | R$ 1.008.444,04 | R$ -19.634,04 | Sem evento extraordinário relevante.
+2025-02 | R$ 973.145,00 | R$ 1.048.863,99 | R$ -75.718,99 | Sem evento extraordinário relevante.
+2025-03 | R$ 1.006.592,56 | R$ 1.022.033,21 | R$ -15.440,65 | Sem evento extraordinário relevante.
+2025-04 | R$ 1.048.431,00 | R$ 1.168.143,68 | R$ -119.712,68 | Perda extraordinária por chargebacks e fraude.
+2025-05 | R$ 1.104.758,19 | R$ 1.116.320,16 | R$ -11.561,97 | Sem evento extraordinário relevante.
+2025-06 | R$ 1.038.743,00 | R$ 1.081.242,99 | R$ -42.499,99 | Sem evento extraordinário relevante.
+2025-07 | R$ 1.028.792,00 | R$ 1.062.511,70 | R$ -33.719,70 | Sem evento extraordinário relevante.
+2025-08 | R$ 987.726,00 | R$ 1.016.808,10 | R$ -29.082,10 | Sem evento extraordinário relevante.
+2025-09 | R$ 969.145,55 | R$ 1.140.705,39 | R$ -171.559,84 | Baixa contábil de estoque obsoleto.
+2025-10 | R$ 993.676,00 | R$ 1.034.071,72 | R$ -40.395,72 | Sem evento extraordinário relevante.
+2025-11 | R$ 1.175.230,92 | R$ 1.203.930,81 | R$ -28.699,89 | Sem evento extraordinário relevante.
+2025-12 | R$ 1.256.630,00 | R$ 1.191.028,78 | R$ 65.601,22 | Sem evento extraordinário relevante.
+2026-01 | R$ 1.079.730,00 | R$ 1.162.808,53 | R$ -83.078,53 | Sem evento extraordinário relevante.
+2026-02 | R$ 1.146.951,00 | R$ 1.294.594,73 | R$ -147.643,73 | Incidente operacional e reembolso a clientes.
+2026-03 | R$ 1.189.995,34 | R$ 1.191.065,93 | R$ -1.070,59 | Sem evento extraordinário relevante.
+2026-04 | R$ 1.255.273,00 | R$ 1.230.285,85 | R$ 24.987,15 | Sem evento extraordinário relevante.
+2026-05 | R$ 1.197.941,97 | R$ 1.189.223,26 | R$ 8.718,71 | Sem evento extraordinário relevante.
+2026-06 | R$ 1.228.438,00 | R$ 1.212.180,03 | R$ 16.257,97 | Sem evento extraordinário relevante.
+2026-07 | R$ 1.117.531,00 | R$ 1.209.055,48 | R$ -91.524,48 | Migração emergencial de infraestrutura.
+2026-08 | R$ 1.110.029,00 | R$ 1.140.735,77 | R$ -30.706,77 | Sem evento extraordinário relevante.
+2026-09 | R$ 1.092.630,77 | R$ 1.137.315,72 | R$ -44.684,95 | Sem evento extraordinário relevante.
+2026-10 | R$ 1.133.507,00 | R$ 1.149.230,97 | R$ -15.723,97 | Sem evento extraordinário relevante.
+2026-11 | R$ 1.362.329,14 | R$ 1.322.269,59 | R$ 40.059,55 | Sem evento extraordinário relevante.
+2026-12 | R$ 1.413.392,00 | R$ 1.348.588,89 | R$ 64.803,11 | Sem evento extraordinário relevante.
+
+Detalhamento mensal de custos:
+Mês | Custo direto | Folha | Marketing | Infraestrutura | Operações | Impostos | Perdas extraordinárias
+2025-01 | R$ 351.587,76 | R$ 350.000,00 | R$ 81.326,18 | R$ 65.000,00 | R$ 86.369,35 | R$ 74.160,75 | R$ 0,00
+2025-02 | R$ 376.435,41 | R$ 351.750,00 | R$ 78.144,50 | R$ 65.650,00 | R$ 103.898,20 | R$ 72.985,88 | R$ 0,00
+2025-03 | R$ 382.026,66 | R$ 353.500,00 | R$ 61.355,32 | R$ 66.300,00 | R$ 83.356,79 | R$ 75.494,44 | R$ 0,00
+2025-04 | R$ 393.442,36 | R$ 355.250,00 | R$ 63.740,49 | R$ 66.950,00 | R$ 90.128,51 | R$ 78.632,32 | R$ 120.000,00
+2025-05 | R$ 425.405,09 | R$ 357.000,00 | R$ 80.189,53 | R$ 67.600,00 | R$ 103.268,68 | R$ 82.856,86 | R$ 0,00
+2025-06 | R$ 405.599,56 | R$ 358.750,00 | R$ 62.527,10 | R$ 68.250,00 | R$ 108.210,61 | R$ 77.905,72 | R$ 0,00
+2025-07 | R$ 377.579,55 | R$ 360.500,00 | R$ 66.526,20 | R$ 68.900,00 | R$ 111.846,55 | R$ 77.159,40 | R$ 0,00
+2025-08 | R$ 350.751,89 | R$ 362.250,00 | R$ 70.521,48 | R$ 69.550,00 | R$ 89.655,28 | R$ 74.079,45 | R$ 0,00
+2025-09 | R$ 368.455,86 | R$ 364.000,00 | R$ 81.615,48 | R$ 70.200,00 | R$ 98.748,13 | R$ 72.685,92 | R$ 85.000,00
+2025-10 | R$ 353.988,44 | R$ 365.750,00 | R$ 87.114,44 | R$ 70.850,00 | R$ 81.843,14 | R$ 74.525,70 | R$ 0,00
+2025-11 | R$ 460.067,92 | R$ 367.500,00 | R$ 92.320,96 | R$ 71.500,00 | R$ 124.399,61 | R$ 88.142,32 | R$ 0,00
+2025-12 | R$ 451.902,28 | R$ 369.250,00 | R$ 78.019,95 | R$ 72.150,00 | R$ 125.459,30 | R$ 94.247,25 | R$ 0,00
+2026-01 | R$ 431.094,16 | R$ 371.000,00 | R$ 92.489,17 | R$ 72.800,00 | R$ 114.445,45 | R$ 80.979,75 | R$ 0,00
+2026-02 | R$ 417.373,96 | R$ 372.750,00 | R$ 90.690,03 | R$ 73.450,00 | R$ 104.309,42 | R$ 86.021,32 | R$ 150.000,00
+2026-03 | R$ 437.636,89 | R$ 374.500,00 | R$ 95.324,88 | R$ 74.100,00 | R$ 120.254,51 | R$ 89.249,65 | R$ 0,00
+2026-04 | R$ 480.018,62 | R$ 376.250,00 | R$ 98.255,15 | R$ 74.750,00 | R$ 106.866,61 | R$ 94.145,47 | R$ 0,00
+2026-05 | R$ 429.067,02 | R$ 378.000,00 | R$ 85.513,49 | R$ 75.400,00 | R$ 131.397,10 | R$ 89.845,65 | R$ 0,00
+2026-06 | R$ 472.221,51 | R$ 379.750,00 | R$ 81.799,79 | R$ 76.050,00 | R$ 110.225,88 | R$ 92.132,85 | R$ 0,00
+2026-07 | R$ 403.934,27 | R$ 381.500,00 | R$ 68.128,05 | R$ 76.700,00 | R$ 99.978,34 | R$ 83.814,82 | R$ 95.000,00
+2026-08 | R$ 392.183,71 | R$ 383.250,00 | R$ 97.009,97 | R$ 77.350,00 | R$ 107.689,91 | R$ 83.252,18 | R$ 0,00
+2026-09 | R$ 394.036,88 | R$ 385.000,00 | R$ 81.922,11 | R$ 78.000,00 | R$ 116.409,42 | R$ 81.947,31 | R$ 0,00
+2026-10 | R$ 422.733,04 | R$ 386.750,00 | R$ 77.017,73 | R$ 78.650,00 | R$ 99.067,18 | R$ 85.013,02 | R$ 0,00
+2026-11 | R$ 513.528,42 | R$ 388.500,00 | R$ 112.270,11 | R$ 79.300,00 | R$ 126.496,37 | R$ 102.174,69 | R$ 0,00
+2026-12 | R$ 522.912,67 | R$ 390.250,00 | R$ 94.103,11 | R$ 79.950,00 | R$ 155.368,71 | R$ 106.004,40 | R$ 0,00
+
+============================================================
+5. RESULTADOS SEMESTRAIS
+============================================================
+
+1º semestre de 2025:
+- Receita total: R$ 6.160.479,75
+- Custos totais: R$ 6.445.048,07
+- Resultado: R$ -284.568,32
+- Margem: -4.62%
+
+2º semestre de 2025:
+- Receita total: R$ 6.411.200,47
+- Custos totais: R$ 6.649.056,50
+- Resultado: R$ -237.856,03
+- Margem: -3.71%
+
+1º semestre de 2026:
+- Receita total: R$ 7.098.329,31
+- Custos totais: R$ 7.280.158,33
+- Resultado: R$ -181.829,02
+- Margem: -2.56%
+
+2º semestre de 2026:
+- Receita total: R$ 7.229.418,91
+- Custos totais: R$ 7.307.196,42
+- Resultado: R$ -77.777,51
+- Margem: -1.08%
+
+Eventos relevantes:
+- Abril/2025: perda extraordinária de R$ 120.000,00 ligada a chargebacks e fraude.
+- Setembro/2025: baixa de R$ 85.000,00 em estoque e equipamentos obsoletos.
+- Fevereiro/2026: impacto extraordinário de R$ 150.000,00 devido a incidente operacional e reembolsos.
+- Julho/2026: custo extraordinário de R$ 95.000,00 associado a migração emergencial de infraestrutura.
+
+
+============================================================
+6. PRODUTOS, PREÇOS E VOLUME
+============================================================
+
+Tabela de referência de produtos:
+- NexaFlow Basic: assinatura mensal de R$ 199,00.
+- NexaFlow Pro: assinatura mensal de R$ 499,00.
+- NexaFlow Enterprise: assinatura mensal de R$ 1.499,00.
+- NexaPay: serviço transacional; receita média de R$ 0,89 por transação processada.
+- NexaInsights: módulo de analytics; assinatura mensal de R$ 299,00.
+
+Volume mensal:
+Mês | Basic (assinaturas ativas) | Pro | Enterprise | NexaPay (transações) | NexaInsights
+
+2025-01 | 795 | 351 | 58 | 444530 | 198
+2025-02 | 766 | 344 | 71 | 421484 | 232
+2025-03 | 782 | 374 | 71 | 466052 | 244
+2025-04 | 828 | 400 | 69 | 487583 | 232
+2025-05 | 852 | 421 | 78 | 466310 | 253
+2025-06 | 895 | 405 | 84 | 475212 | 261
+2025-07 | 926 | 421 | 89 | 497973 | 274
+2025-08 | 948 | 463 | 88 | 517016 | 288
+2025-09 | 926 | 474 | 97 | 523037 | 295
+2025-10 | 990 | 456 | 94 | 562788 | 304
+2025-11 | 980 | 473 | 100 | 592182 | 300
+2025-12 | 982 | 516 | 102 | 620846 | 313
+2026-01 | 1010 | 542 | 112 | 623031 | 325
+2026-02 | 1049 | 548 | 118 | 630730 | 338
+2026-03 | 1063 | 575 | 117 | 645148 | 358
+2026-04 | 1116 | 578 | 124 | 642930 | 360
+2026-05 | 1110 | 564 | 126 | 652378 | 369
+2026-06 | 1132 | 575 | 126 | 713389 | 368
+2026-07 | 1155 | 594 | 129 | 704654 | 379
+2026-08 | 1213 | 620 | 137 | 742842 | 416
+2026-09 | 1197 | 654 | 139 | 762405 | 425
+2026-10 | 1223 | 665 | 147 | 743478 | 411
+2026-11 | 1226 | 692 | 151 | 770219 | 442
+2026-12 | 1288 | 694 | 160 | 766550 | 431
+
+============================================================
+7. METAS COMERCIAIS E DE PRODUTO
+============================================================
+
+Metas de 2026:
+- Crescer receita anual em pelo menos 18% em relação a 2025.
+- Manter churn mensal abaixo de 2,5% até dezembro de 2026.
+- Atingir CSAT médio igual ou superior a 4,45/5.
+- Manter SLA de suporte acima de 94%.
+- Aumentar participação dos planos Pro e Enterprise.
+- Reduzir incidentes críticos de produção em 25%.
+- Reduzir tempo médio de onboarding de clientes de 12 para 8 dias.
+
+Metas de Engenharia:
+- Disponibilidade mensal alvo: 99,90%.
+- Cobertura de testes automatizados alvo: 75% nos serviços críticos.
+- Tempo médio de recuperação de incidente crítico: abaixo de 45 minutos.
+- Deploys de produção: preferencialmente de segunda a quinta-feira.
+- Mudanças críticas devem possuir plano de rollback.
+
+Metas de Vendas:
+- Receita nova anual de R$ 4,8 milhões.
+- Ticket médio de novos clientes B2B: acima de R$ 1.200/mês.
+- Conversão de oportunidades qualificadas: 23%.
+
+Metas de Marketing:
+- Reduzir CAC em 10%.
+- Aumentar leads qualificados em 20%.
+- Aumentar participação de aquisição orgânica no pipeline.
+
+============================================================
+8. INDICADORES DE SUPORTE E CLIENTES
+============================================================
+
+Mês | Tickets | SLA atendido (%) | CSAT (0-5) | Churn mensal (%)
+
+2025-01 | 1745 | 91.8% | 4.30 | 3.53%
+2025-02 | 1848 | 91.6% | 4.33 | 3.22%
+2025-03 | 1886 | 91.9% | 4.31 | 3.44%
+2025-04 | 2008 | 92.9% | 4.38 | 3.09%
+2025-05 | 2116 | 93.3% | 4.39 | 3.35%
+2025-06 | 2242 | 93.0% | 4.33 | 3.09%
+2025-07 | 2183 | 92.3% | 4.36 | 2.91%
+2025-08 | 2212 | 92.0% | 4.37 | 3.17%
+2025-09 | 2370 | 92.9% | 4.38 | 3.12%
+2025-10 | 2425 | 93.2% | 4.41 | 2.78%
+2025-11 | 2355 | 92.7% | 4.36 | 2.93%
+2025-12 | 2350 | 93.7% | 4.36 | 2.83%
+2026-01 | 2518 | 94.1% | 4.42 | 2.58%
+2026-02 | 2575 | 92.9% | 4.39 | 2.72%
+2026-03 | 2672 | 94.3% | 4.42 | 2.79%
+2026-04 | 2700 | 93.4% | 4.45 | 2.62%
+2026-05 | 2717 | 94.2% | 4.45 | 2.45%
+2026-06 | 2731 | 93.6% | 4.48 | 2.37%
+2026-07 | 2821 | 93.6% | 4.48 | 2.39%
+2026-08 | 3012 | 94.7% | 4.43 | 2.34%
+2026-09 | 2974 | 95.2% | 4.43 | 2.20%
+2026-10 | 2952 | 93.9% | 4.45 | 2.09%
+2026-11 | 3002 | 94.4% | 4.44 | 2.31%
+2026-12 | 3175 | 94.4% | 4.52 | 2.25%
+
+============================================================
+9. INCIDENTES OPERACIONAIS IMPORTANTES
+============================================================
+
+INC-2025-004 — 18/04/2025
+Um aumento incomum de chargebacks foi identificado em operações do NexaPay.
+Impacto financeiro extraordinário registrado: R$ 120.000,00.
+Ação corretiva: reforço de regras antifraude, revisão de limites e monitoramento adicional.
+Status: encerrado.
+
+INC-2025-011 — 09/09/2025
+A empresa realizou baixa de equipamentos e itens de estoque considerados obsoletos.
+Impacto extraordinário: R$ 85.000,00.
+Status: encerrado.
+
+INC-2026-002 — 14/02/2026
+Falha em uma rotina de processamento causou cobranças duplicadas em parte da base.
+Clientes afetados receberam estorno e crédito compensatório.
+Impacto extraordinário registrado: R$ 150.000,00.
+Tempo total até estabilização: 3 horas e 42 minutos.
+Status: encerrado.
+Ação preventiva: idempotência obrigatória nas rotinas críticas de cobrança.
+
+INC-2026-008 — 22/07/2026
+Saturação da infraestrutura principal exigiu migração emergencial.
+Impacto extraordinário registrado: R$ 95.000,00.
+Tempo de indisponibilidade parcial: 58 minutos.
+Status: encerrado.
+Ação preventiva: aumento de capacidade, alertas antecipados e revisão de autoscaling.
+
+============================================================
+10. PRINCIPAIS CLIENTES FICTÍCIOS
+============================================================
+
+Cliente: Loja Horizonte
+Segmento: varejo
+Plano: NexaFlow Enterprise
+MRR em dezembro/2026: R$ 18.500,00
+Status: ativo
+
+Cliente: Grupo Serra Azul
+Segmento: distribuição
+Plano: NexaFlow Enterprise + NexaInsights
+MRR em dezembro/2026: R$ 24.900,00
+Status: ativo
+
+Cliente: Mercado Nova Era
+Segmento: supermercado
+Plano: NexaFlow Pro + NexaPay
+MRR estimado em dezembro/2026: R$ 8.700,00
+Status: ativo
+
+Cliente: BioCasa
+Segmento: e-commerce
+Plano: NexaFlow Pro
+MRR em dezembro/2026: R$ 5.200,00
+Status: ativo
+
+Cliente: Atacado Vale
+Segmento: atacado
+Plano: NexaFlow Enterprise + NexaPay
+MRR estimado em dezembro/2026: R$ 31.400,00
+Status: ativo
+
+============================================================
+11. ORÇAMENTO INTERNO DE 2026
+============================================================
+
+Orçamento anual aproximado por centro de custo:
+- Engenharia e infraestrutura: R$ 5.400.000,00.
+- Produto e design: R$ 1.850.000,00.
+- Vendas: R$ 2.600.000,00.
+- Marketing: R$ 1.350.000,00.
+- Financeiro e Administrativo: R$ 1.220.000,00.
+- Recursos Humanos: R$ 780.000,00.
+- Suporte e Operações: R$ 2.300.000,00.
+
+Investimentos previstos:
+- Modernização da infraestrutura: R$ 650.000,00.
+- Segurança e observabilidade: R$ 280.000,00.
+- Treinamento e desenvolvimento: R$ 150.000,00.
+- Automação interna com IA: R$ 320.000,00.
+
+============================================================
+12. ESTRUTURA ORGANIZACIONAL
+============================================================
+
+Diretoria Executiva:
+- CEO: Marcelo Fontes.
+- COO: Renata Albuquerque.
+- CTO: André Martins.
+- CFO: Patrícia Gomes.
+- Head de Produto: Isabela Mendes.
+- Head de Vendas: Olivia Freitas.
+- Head de RH: Vinicius Duarte.
+
+Observação: nomes da diretoria também são fictícios.
+
+Times:
+Engenharia é responsável por backend, frontend, QA, DevOps, dados, arquitetura e confiabilidade.
+Produto é responsável por discovery, pesquisa, design, roadmap e priorização.
+Vendas responde por prospecção, negociação e expansão comercial.
+Marketing é responsável por aquisição, conteúdo, mídia paga e posicionamento.
+Financeiro controla faturamento, custos, orçamento, fluxo de caixa e reporting.
+RH administra contratação, férias, benefícios, desempenho e desenvolvimento.
+Suporte atende clientes e acompanha indicadores de satisfação e SLA.
+Operações cuida de onboarding operacional, logística interna e processos recorrentes.
+Administrativo gerencia instalações, contratos e rotina de escritório.
+
+============================================================
+13. POLÍTICA DE BONIFICAÇÃO
+============================================================
+
+Elegibilidade:
+- Colaboradores ativos há pelo menos 6 meses podem participar do bônus semestral.
+- O pagamento depende do resultado da empresa e do desempenho individual.
+- O bônus não é garantido.
+
+Composição indicativa:
+- 50% resultado da empresa.
+- 30% resultado da área.
+- 20% desempenho individual.
+
+Faixas indicativas:
+- Abaixo de 80% da meta: sem bônus.
+- Entre 80% e 94,9%: até 50% do bônus-alvo.
+- Entre 95% e 104,9%: até 100% do bônus-alvo.
+- 105% ou mais: até 120% do bônus-alvo, sujeito ao orçamento.
+
+============================================================
+14. POLÍTICA DE CONTRATAÇÃO
+============================================================
+
+Toda nova vaga precisa de:
+1. aprovação do gestor;
+2. validação do RH;
+3. confirmação de orçamento pelo Financeiro.
+
+Prazo médio de contratação em 2026:
+- Engenharia: 42 dias.
+- Produto: 38 dias.
+- Vendas: 29 dias.
+- Marketing: 31 dias.
+- Financeiro: 35 dias.
+- Suporte/Operações: 24 dias.
+
+Período de experiência padrão: 90 dias.
+
+============================================================
+15. POLÍTICA DE DESLIGAMENTO E ACESSOS
+============================================================
+
+Quando um colaborador é desligado:
+- RH comunica Engenharia/DevOps e Administrativo.
+- Acessos críticos devem ser revogados até o final do último dia de trabalho.
+- Notebook e acessórios devem ser devolvidos.
+- Tokens, chaves e credenciais pessoais devem ser invalidados.
+- Documentos de transferência de conhecimento devem ser entregues ao gestor.
+- Clientes sob responsabilidade direta devem ser redistribuídos.
+
+============================================================
+16. RISCOS INTERNOS MAPEADOS EM 2026
+============================================================
+
+Risco 1: concentração de conhecimento técnico em poucos profissionais.
+Mitigação: documentação, pair programming e rotação de ownership.
+
+Risco 2: crescimento da infraestrutura acima do previsto.
+Mitigação: revisão de capacidade trimestral e autoscaling.
+
+Risco 3: fraude e chargebacks no NexaPay.
+Mitigação: motor antifraude, limites, monitoramento e revisão de regras.
+
+Risco 4: churn em pequenas empresas.
+Mitigação: onboarding orientado a valor, customer success e educação do cliente.
+
+Risco 5: dependência de poucos clientes enterprise.
+Mitigação: diversificação da carteira e expansão do segmento SMB.
+
+============================================================
+17. PROJETOS INTERNOS DE 2026
+============================================================
+
+Projeto Atlas
+Objetivo: migrar serviços legados para arquitetura mais resiliente.
+Status em dezembro/2026: 78% concluído.
+Orçamento aprovado: R$ 520.000,00.
+Responsável executivo: CTO.
+
+Projeto Aurora
+Objetivo: criar uma camada de analytics self-service para clientes.
+Status: lançado em setembro/2026.
+Produto resultante: NexaInsights.
+
+Projeto Sentinel
+Objetivo: aumentar segurança, observabilidade e prevenção de fraude.
+Status: fase 2 concluída.
+Investimento acumulado em 2026: R$ 245.000,00.
+
+Projeto Pulse
+Objetivo: reduzir churn por meio de indicadores de saúde do cliente.
+Status: piloto com 120 contas.
+Resultado preliminar: redução de churn de aproximadamente 0,4 ponto percentual no grupo piloto.
+
+============================================================
+18. RESUMO EXECUTIVO DE 2026
+============================================================
+
+A empresa encerrou 2026 com crescimento de receita, expansão da base de assinaturas e melhora gradual nos indicadores de churn, SLA e satisfação dos clientes.
+
+O primeiro semestre de 2026 foi impactado por um incidente operacional em fevereiro, que gerou reembolsos extraordinários e pressionou o resultado do período.
+
+O segundo semestre apresentou recuperação, apesar do custo extraordinário da migração de infraestrutura em julho.
+
+Os produtos com maior relevância estratégica foram NexaFlow Pro, NexaFlow Enterprise, NexaPay e NexaInsights.
+
+Os principais focos para 2027 definidos pela liderança foram:
+- crescimento sustentável da receita recorrente;
+- redução adicional do churn;
+- aumento de margem;
+- maior automação operacional;
+- melhoria da estabilidade da plataforma;
+- evolução do programa de segurança;
+- expansão do produto de analytics.
+
+============================================================
+19. EXEMPLOS DE PERGUNTAS PARA TESTAR O RAG
+============================================================
+
+Você pode usar este documento para testar perguntas como:
+
+- Quantos colaboradores a empresa possui?
+- Quem trabalha no time de Engenharia?
+- Quantos dias de férias Ana Martins ainda possui?
+- Qual colaborador possui apenas 4 dias de férias disponíveis?
+- Qual é a política de férias?
+- Quantos dias de antecedência são necessários para solicitar férias?
+- Qual o valor do vale-refeição?
+- Qual é o auxílio home office?
+- Qual foi o faturamento de fevereiro de 2026?
+- Qual foi o lucro ou prejuízo de abril de 2025?
+- Em quais meses ocorreram perdas extraordinárias?
+- O que aconteceu em fevereiro de 2026?
+- Quanto custou a migração emergencial de infraestrutura?
+- Qual foi a receita total do primeiro semestre de 2026?
+- Qual semestre teve a maior receita?
+- Quais são os produtos vendidos pela empresa?
+- Quanto custa o NexaFlow Pro?
+- Quantas assinaturas do NexaFlow Enterprise existiam em dezembro de 2026?
+- Qual foi o churn de dezembro de 2026?
+- Qual era a meta de SLA da empresa?
+- Quais são os principais riscos internos?
+- Qual projeto lançou o NexaInsights?
+- Qual o objetivo do Projeto Pulse?
+- Qual cliente fictício possui o maior MRR informado?
+- Qual área tem mais colaboradores?
+- Quais são os critérios para receber bônus?
+- Qual é o prazo médio de contratação em Engenharia?
+
+============================================================
+20. FIM DA BASE FICTÍCIA
+============================================================
+
+Este arquivo foi criado para simular uma base de conhecimento corporativa interna.
+Todos os dados são fictícios e não representam qualquer empresa ou pessoa real.

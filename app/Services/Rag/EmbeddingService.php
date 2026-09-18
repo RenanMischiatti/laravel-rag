@@ -7,6 +7,7 @@ use Laravel\Ai\Enums\Lab;
 
 class EmbeddingService
 {
+    /** Embed document chunks in a single request. */
     public function embedMany(array $chunks): array
     {
         if ($chunks === []) {
@@ -23,5 +24,15 @@ class EmbeddingService
             ->timeout(120)
             ->generate(Lab::Ollama, config('ai.providers.ollama.models.embeddings.default'))
             ->embeddings;
+    }
+
+    /** Embed a search query. */
+    public function embedQuery(string $question): array
+    {
+        return Embeddings::for(['search_query: '.$question])
+            ->dimensions(768)
+            ->timeout(120)
+            ->generate(Lab::Ollama, config('ai.providers.ollama.models.embeddings.default'))
+            ->first();
     }
 }

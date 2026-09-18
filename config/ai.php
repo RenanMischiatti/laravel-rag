@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'default' => 'ollama',
     'default_for_embeddings' => 'ollama',
 
     'caching' => [
@@ -17,6 +18,9 @@ return [
             'key' => env('OLLAMA_API_KEY', ''),
             'url' => env('OLLAMA_URL', 'http://ollama:11434'),
             'models' => [
+                'text' => [
+                    'default' => env('OLLAMA_CHAT_MODEL', 'qwen3.5:4b'),
+                ],
                 'embeddings' => [
                     'default' => env('OLLAMA_EMBEDDING_MODEL', 'nomic-embed-text-v2-moe'),
                     'dimensions' => 768,

@@ -8,6 +8,10 @@ use Laravel\Ai\Enums\Lab;
 
 class EmbeddingService
 {
+    public function __construct(
+        private readonly ?RagConfiguration $ragConfiguration = null,
+    ) {}
+
     /** Embed document chunks in a single request. */
     public function embedMany(array $chunks, ?string $profile = null): array
     {
@@ -52,13 +56,22 @@ class EmbeddingService
     /** Resolve an embedding profile from configuration. */
     private function profile(?string $profile): array
     {
-        $profile ??= config('rag.defaults.embedding');
-        $configuration = config("rag.embeddings.profiles.{$profile}");
+        if ($profile === null) {
+            return ($this->ragConfiguration ?? new RagConfiguration)->embedding()['configuration'];
+        }
 
-        if ($configuration === null) {
+        [$strategyName, $modeName] = array_pad(explode(':', $profile, 2), 2, null);
+        $strategy = config("rag-strategies.embedding.{$strategyName}");
+        $mode = $strategy['input_modes'][$modeName] ?? null;
+
+        if ($strategy === null || $mode === null) {
             throw new InvalidArgumentException("Unknown embedding profile [{$profile}].");
         }
 
-        return $configuration;
+        return [
+            'model' => $strategy['model'],
+            'dimensions' => $strategy['dimensions'],
+            ...$mode,
+        ];
     }
 }

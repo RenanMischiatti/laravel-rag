@@ -14,19 +14,6 @@ class DocumentImportService
         private readonly EmbeddingService $embeddingService,
     ) {}
 
-    /** Import a document and return its chunk count. */
-    public function import(
-        string $path,
-        ?string $chunkingProfile = null,
-        ?string $embeddingProfile = null,
-    ): int {
-        return $this->importUsing(
-            $path,
-            config('rag.chunking.profiles.'.($chunkingProfile ?? config('rag.defaults.chunking'))),
-            config('rag.embeddings.profiles.'.($embeddingProfile ?? config('rag.defaults.embedding'))),
-        );
-    }
-
     /** Import a document using complete runtime configurations. */
     public function importUsing(
         string $path,
@@ -35,11 +22,13 @@ class DocumentImportService
     ): int {
         $filename = basename($path);
         $content = File::get($path);
+
         $chunking = $this->chunkingFactory->make($chunkingConfiguration['strategy']);
         $chunks = $chunking->chunk($content, [
             ...$chunkingConfiguration['options'],
             'embedding_configuration' => $embeddingConfiguration,
         ]);
+        
         $embeddings = $this->embeddingService->embedManyUsing($chunks, $embeddingConfiguration);
 
         $chunks = collect($chunks)

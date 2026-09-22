@@ -17,6 +17,9 @@ return new class extends Migration
             $table->timestamps();
 
             $table->unique(['document_id', 'position']);
+            $table
+                ->fullText('content', 'document_chunks_content_fulltext')
+                ->language('portuguese');
         });
 
     }

@@ -10,10 +10,12 @@ class ConfigurationGenerator
     public function chunking(array $strategies): Collection
     {
         return collect($strategies)->flatMap(function (array $strategy, string $name): Collection {
+            $strategyClass = config("rag-strategies.chunking.{$name}");
+
             return $this->cartesian($strategy['options'])->map(fn (array $options): array => [
                 'name' => $this->name($name, $options),
                 'configuration' => [
-                    'strategy' => $strategy['strategy'],
+                    'strategy' => $strategyClass,
                     'options' => $options,
                 ],
             ]);
@@ -24,13 +26,15 @@ class ConfigurationGenerator
     public function embeddings(array $profiles): Collection
     {
         return collect($profiles)->flatMap(function (array $profile, string $name): Collection {
+            $strategy = config("rag-strategies.embedding.{$name}");
+
             return collect($profile['input_modes'])->map(
-                fn (array $mode, string $modeName): array => [
+                fn (string $modeName): array => [
                     'name' => "{$name}:{$modeName}",
                     'configuration' => [
-                        'model' => $profile['model'],
-                        'dimensions' => $profile['dimensions'],
-                        ...$mode,
+                        'model' => $strategy['model'],
+                        'dimensions' => $strategy['dimensions'],
+                        ...$strategy['input_modes'][$modeName],
                     ],
                 ],
             );

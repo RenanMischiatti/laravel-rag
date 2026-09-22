@@ -19,6 +19,7 @@ class VectorRetrievalStrategy implements RetrievalStrategy
         int $limit,
         ?float $minimumSimilarity,
         array $embeddingConfiguration,
+        array $retrievalConfiguration,
     ): Collection {
         $embeddedQuestion = $this->embeddingService->embedQueryUsing($question, $embeddingConfiguration);
         $query = DocumentChunk::query()

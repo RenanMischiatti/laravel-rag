@@ -2,6 +2,8 @@
 
 namespace App\Console\Commands;
 
+use App\Services\Rag\DocumentIndexService;
+use App\Services\Rag\RagConfiguration;
 use App\Services\RagEvaluation\EvaluationRunner;
 use Illuminate\Console\Command;
 use Illuminate\Support\Str;
@@ -14,8 +16,14 @@ class EvaluateRag extends Command
     protected $description = 'Evaluate RAG retrieval and answer quality';
 
     /** Run the evaluation dataset and display its metrics. */
-    public function handle(EvaluationRunner $evaluator): int
-    {
+    public function handle(
+        EvaluationRunner $evaluator,
+        DocumentIndexService $indexer,
+        RagConfiguration $configuration,
+    ): int {
+        $index = $indexer->rebuildCurrent();
+        $this->printConfiguration($configuration, $index['chunks']);
+
         $cases = config('rag-evaluation.cases', []);
 
         $evaluation = $evaluator->evaluate(
@@ -24,7 +32,25 @@ class EvaluateRag extends Command
         );
 
         $this->printResults($evaluation);
+
         return self::SUCCESS;
+    }
+
+    /** Display the complete configuration used by this evaluation. */
+    private function printConfiguration(RagConfiguration $configuration, int $chunks): void
+    {
+        $chunking = $configuration->chunking();
+        $embedding = $configuration->embedding();
+        $retrieval = $configuration->retrieval();
+
+        $this->info('Evaluation configuration');
+        $this->line('Chunking: '.$chunking['name']);
+        $this->line('Embedding: '.$embedding['name']);
+        $this->line('Retrieval: '.$retrieval['name']);
+        $this->line('Minimum similarity: '.$retrieval['configuration']['minimum_similarity']);
+        $this->line('Context limit: '.$retrieval['configuration']['context_limit']);
+        $this->line('Index chunks: '.$chunks);
+        $this->newLine();
     }
 
     private function printResults(array $evaluation): void
@@ -50,7 +76,7 @@ class EvaluateRag extends Command
         $this->newLine();
         $this->info('Evaluation summary');
         $this->line('Questions: '.$summary['questions']);
-        $this->line('Hit@K: '.$this->percentage($summary['hit_at_k']));
+        $this->line('Context Hit@K: '.$this->percentage($summary['hit_at_k']));
         $this->line('MRR: '.number_format($summary['mrr'], 3));
         $this->line('Judge pass rate: '.($summary['judge_pass_rate'] === null
             ? 'skipped'

@@ -2,26 +2,28 @@
 
 namespace App\Services\RagEvaluation;
 
-use App\Models\DocumentChunk;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
 
 class RetrievalEvaluator
 {
-    /** Find the expected chunk and calculate its reciprocal rank. */
+    /** Find the rank where the retrieved context contains all expected evidence. */
     public function evaluate(Collection $chunks, array $case): array
     {
-        $index = $chunks->search(function (DocumentChunk $chunk) use ($case): bool {
-            $correctDocument = $chunk->document->filename === $case['expected_document'];
-            $correctContent = $this->containsAll(
-                $chunk->content,
-                $case['expected_context_contains'],
-            );
+        $evidence = '';
+        $rank = null;
 
-            return $correctDocument && $correctContent;
-        });
+        foreach ($chunks as $index => $chunk) {
+            if ($chunk->document->filename === $case['expected_document']) {
+                $evidence .= "\n".$chunk->content;
+            }
 
-        $rank = $index === false ? null : $index + 1;
+            if ($this->containsAll($evidence, $case['expected_context_contains'])) {
+                $rank = $index + 1;
+
+                break;
+            }
+        }
 
         return [
             'passed' => $rank !== null,

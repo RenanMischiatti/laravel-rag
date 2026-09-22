@@ -12,27 +12,31 @@ class DocumentRetriever
 {
     public function __construct(
         private readonly RetrievalStrategyFactory $retrievalFactory,
+        private readonly RagConfiguration $ragConfiguration,
     ) {}
 
     /** Find the chunks that are closest to the question. */
     public function retrieve(string $question): Collection
     {
-        $profile = config('rag.defaults.retrieval');
-        $configuration = $this->configuration($profile);
+        $retrieval = $this->ragConfiguration->retrieval();
+        $embedding = $this->ragConfiguration->embedding();
+        $configuration = $retrieval['configuration'];
 
         Log::info('RAG retrieval started.', [
             'question' => $question,
-            'retrieval_profile' => $profile,
+            'retrieval_profile' => $retrieval['name'],
             'context_limit' => $configuration['context_limit'],
             'minimum_similarity' => $configuration['minimum_similarity'],
+            'embedding_profile' => $embedding['name'],
         ]);
 
         return $this->search(
             $question,
-            $profile,
+            $retrieval['name'],
             $configuration['context_limit'],
             $configuration['minimum_similarity'],
-            config('rag.embeddings.profiles.'.config('rag.defaults.embedding')),
+            $embedding['configuration'],
+            $configuration,
         );
     }
 
@@ -57,6 +61,7 @@ class DocumentRetriever
             $limit,
             null,
             $embeddingConfiguration,
+            $this->configuration($retrievalProfile),
         );
     }
 
@@ -67,8 +72,9 @@ class DocumentRetriever
         int $limit,
         ?float $minimumSimilarity,
         array $embeddingConfiguration,
+        ?array $retrievalConfiguration = null,
     ): Collection {
-        $configuration = $this->configuration($profile);
+        $configuration = $retrievalConfiguration ?? $this->configuration($profile);
 
         $strategy = $this->retrievalFactory->make($configuration['strategy']);
         $chunks = $strategy->retrieve(
@@ -76,6 +82,7 @@ class DocumentRetriever
             $limit,
             $minimumSimilarity,
             $embeddingConfiguration,
+            $configuration,
         );
 
         Log::info('RAG chunks retrieved.', [
@@ -87,6 +94,9 @@ class DocumentRetriever
                     'position' => $chunk->position,
                     'distance' => round((float) $chunk->distance, 4),
                     'similarity' => round(1 - (float) $chunk->distance, 4),
+                    'rrf_score' => $chunk->rrf_score,
+                    'vector_rank' => $chunk->vector_rank,
+                    'lexical_rank' => $chunk->lexical_rank,
                     'content' => $chunk->content,
                 ])
                 ->all(),
@@ -98,7 +108,7 @@ class DocumentRetriever
     /** Resolve a retrieval profile from configuration. */
     private function configuration(string $profile): array
     {
-        $configuration = config("rag.retrieval.profiles.{$profile}");
+        $configuration = config("rag-strategies.retrieval.{$profile}");
 
         if ($configuration === null) {
             throw new InvalidArgumentException("Unknown retrieval profile [{$profile}].");

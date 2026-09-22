@@ -71,10 +71,7 @@ class ExperimentRunner
             }
         } finally {
             $progress?->__invoke('Restoring the default RAG index');
-            $this->indexer->rebuild(
-                config('rag.defaults.chunking'),
-                config('rag.defaults.embedding'),
-            );
+            $this->indexer->rebuildCurrent();
         }
 
         $results = collect($results)->map(fn (array $result): array => [

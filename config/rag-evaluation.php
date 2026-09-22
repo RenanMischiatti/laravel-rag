@@ -1,11 +1,5 @@
 <?php
 
-use App\Services\Rag\Chunking\FixedTextChunkingStrategy;
-use App\Services\Rag\Chunking\ParagraphChunkingStrategy;
-use App\Services\Rag\Chunking\SectionChunkingStrategy;
-use App\Services\Rag\Chunking\SectionSemanticChunkingStrategy;
-use App\Services\Rag\Chunking\SemanticChunkingStrategy;
-
 return [
     'judge' => [
         'model' => env('OLLAMA_JUDGE_MODEL', 'qwen3.5:4b'),
@@ -32,33 +26,28 @@ return [
         'minimum_hit_rate' => (float) env('RAG_EXPERIMENT_MINIMUM_HIT_RATE', 0.95),
         'chunking_strategies' => [
             'paragraph' => [
-                'strategy' => ParagraphChunkingStrategy::class,
                 'options' => [
                     'max_characters' => [500, 1000, 1500],
                 ],
             ],
             'fixed' => [
-                'strategy' => FixedTextChunkingStrategy::class,
                 'options' => [
                     'max_characters' => [500, 1000],
                     'overlap' => [0, 100],
                 ],
             ],
             'section' => [
-                'strategy' => SectionChunkingStrategy::class,
                 'options' => [
                     'max_characters' => [500, 1000, 1500],
                 ],
             ],
             'semantic' => [
-                'strategy' => SemanticChunkingStrategy::class,
                 'options' => [
                     'max_characters' => [500, 1000],
                     'minimum_similarity' => [0.55, 0.65, 0.75],
                 ],
             ],
             'section_semantic' => [
-                'strategy' => SectionSemanticChunkingStrategy::class,
                 'options' => [
                     'max_characters' => [500, 1000],
                     'minimum_similarity' => [0.55, 0.65, 0.75],
@@ -67,21 +56,10 @@ return [
         ],
         'embedding_strategies' => [
             'nomic_768' => [
-                'model' => env('OLLAMA_EMBEDDING_MODEL', 'nomic-embed-text-v2-moe'),
-                'dimensions' => 768,
-                'input_modes' => [
-                    'asymmetric' => [
-                        'document_prefix' => 'search_document: ',
-                        'query_prefix' => 'search_query: ',
-                    ],
-                    'plain' => [
-                        'document_prefix' => '',
-                        'query_prefix' => '',
-                    ],
-                ],
+                'input_modes' => ['asymmetric', 'plain'],
             ],
         ],
-        'retrieval_profiles' => ['vector'],
+        'retrieval_profiles' => ['vector', 'hybrid'],
         'minimum_similarities' => [null, 0.20, 0.25, 0.30, 0.35, 0.40, 0.45, 0.50],
         'context_limits' => [1, 3, 5, 10, 20],
     ],

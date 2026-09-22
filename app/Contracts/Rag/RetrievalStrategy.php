@@ -12,5 +12,6 @@ interface RetrievalStrategy
         int $limit,
         ?float $minimumSimilarity,
         array $embeddingConfiguration,
+        array $retrievalConfiguration,
     ): Collection;
 }

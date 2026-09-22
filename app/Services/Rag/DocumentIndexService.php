@@ -10,16 +10,20 @@ class DocumentIndexService
 {
     public function __construct(
         private readonly DocumentImportService $importer,
+        private readonly RagConfiguration $configuration,
     ) {}
 
-    /** Rebuild every document chunk using one indexing configuration. */
-    public function rebuild(string $chunkingProfile, string $embeddingProfile): array
+    /** Rebuild the index using the official RAG configuration. */
+    public function rebuildCurrent(): array
     {
+        $chunking = $this->configuration->chunking();
+        $embedding = $this->configuration->embedding();
+
         return $this->rebuildUsing(
-            $chunkingProfile,
-            config("rag.chunking.profiles.{$chunkingProfile}"),
-            $embeddingProfile,
-            config("rag.embeddings.profiles.{$embeddingProfile}"),
+            $chunking['name'],
+            $chunking['configuration'],
+            $embedding['name'],
+            $embedding['configuration'],
         );
     }
 

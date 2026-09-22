@@ -2,6 +2,7 @@
 
 namespace App\Services\RagEvaluation;
 
+use App\Ai\Agents\RagEvaluationAgent;
 use App\Models\DocumentChunk;
 use Illuminate\Support\Collection;
 use Laravel\Ai\Enums\Lab;

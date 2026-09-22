@@ -2,43 +2,81 @@
 
 namespace App\Services\Rag;
 
+use App\Factories\Rag\RetrievalStrategyFactory;
 use App\Models\DocumentChunk;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Log;
+use InvalidArgumentException;
 
 class DocumentRetriever
 {
     public function __construct(
-        private readonly EmbeddingService $embeddingService,
+        private readonly RetrievalStrategyFactory $retrievalFactory,
     ) {}
 
     /** Find the chunks that are closest to the question. */
     public function retrieve(string $question): Collection
     {
+        $profile = config('rag.defaults.retrieval');
+        $configuration = $this->configuration($profile);
+
         Log::info('RAG retrieval started.', [
             'question' => $question,
-            'context_limit' => config('rag.context_limit'),
-            'minimum_similarity' => config('rag.minimum_similarity'),
+            'retrieval_profile' => $profile,
+            'context_limit' => $configuration['context_limit'],
+            'minimum_similarity' => $configuration['minimum_similarity'],
         ]);
 
-        $embeddedQuestion = $this->embeddingService->embedQuery($question);
+        return $this->search(
+            $question,
+            $profile,
+            $configuration['context_limit'],
+            $configuration['minimum_similarity'],
+            config('rag.embeddings.profiles.'.config('rag.defaults.embedding')),
+        );
+    }
 
-        Log::info('RAG question embedded.', [
-            'dimensions' => count($embeddedQuestion),
+    /** Retrieve a larger unfiltered candidate set for experiments. */
+    public function retrieveCandidates(
+        string $question,
+        int $limit,
+        string $retrievalProfile,
+        string $embeddingName,
+        array $embeddingConfiguration,
+    ): Collection {
+        Log::info('RAG candidate retrieval started.', [
+            'question' => $question,
+            'candidate_limit' => $limit,
+            'retrieval_profile' => $retrievalProfile,
+            'embedding_profile' => $embeddingName,
         ]);
 
-        $chunks = DocumentChunk::query()
-            ->with('document:id,filename')
-            ->whereNotNull('embedding')
-            ->select('document_chunks.*')
-            ->selectVectorDistance('embedding', $embeddedQuestion, 'distance')
-            ->whereVectorSimilarTo(
-                'embedding',
-                $embeddedQuestion,
-                minSimilarity: config('rag.minimum_similarity'),
-            )
-            ->limit(config('rag.context_limit'))
-            ->get();
+        return $this->search(
+            $question,
+            $retrievalProfile,
+            $limit,
+            null,
+            $embeddingConfiguration,
+        );
+    }
+
+    /** Execute one registered retrieval strategy. */
+    private function search(
+        string $question,
+        string $profile,
+        int $limit,
+        ?float $minimumSimilarity,
+        array $embeddingConfiguration,
+    ): Collection {
+        $configuration = $this->configuration($profile);
+
+        $strategy = $this->retrievalFactory->make($configuration['strategy']);
+        $chunks = $strategy->retrieve(
+            $question,
+            $limit,
+            $minimumSimilarity,
+            $embeddingConfiguration,
+        );
 
         Log::info('RAG chunks retrieved.', [
             'count' => $chunks->count(),
@@ -55,5 +93,17 @@ class DocumentRetriever
         ]);
 
         return $chunks;
+    }
+
+    /** Resolve a retrieval profile from configuration. */
+    private function configuration(string $profile): array
+    {
+        $configuration = config("rag.retrieval.profiles.{$profile}");
+
+        if ($configuration === null) {
+            throw new InvalidArgumentException("Unknown retrieval profile [{$profile}].");
+        }
+
+        return $configuration;
     }
 }

@@ -35,7 +35,7 @@ class EvaluationRunner
     {
         $chunks = $this->retriever->retrieve($case['question']);
         $retrieval = $this->retrievalEvaluator->evaluate($chunks, $case);
-        
+
         $answer = $generateAnswer
             ? $this->rag->answerFromChunks($case['question'], $chunks)
             : null;

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Services\RagEvaluation;
+namespace App\Ai\Agents;
 
 use Illuminate\Contracts\JsonSchema\JsonSchema;
 use Laravel\Ai\Contracts\Agent;

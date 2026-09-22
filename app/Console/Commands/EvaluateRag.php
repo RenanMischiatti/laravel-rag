@@ -18,16 +18,17 @@ class EvaluateRag extends Command
     {
         $cases = config('rag-evaluation.cases', []);
 
-        if ($cases === []) {
-            $this->error('No evaluation cases were configured.');
-            return self::FAILURE;
-        }
-
         $evaluation = $evaluator->evaluate(
             $cases,
             generateAnswers: ! $this->option('retrieval-only'),
         );
 
+        $this->printResults($evaluation);
+        return self::SUCCESS;
+    }
+
+    private function printResults(array $evaluation): void
+    {
         $this->table(
             ['Question', 'Retrieval', 'Rank', 'Judge', 'Score', 'Reason'],
             collect($evaluation['results'])
@@ -62,8 +63,6 @@ class EvaluateRag extends Command
             $this->line('Completeness: '.$summary['judge_scores']['completeness'].'/5');
             $this->line('Overall judge score: '.$summary['judge_scores']['overall_score'].'/5');
         }
-
-        return self::SUCCESS;
     }
 
     /** Format a decimal metric as a percentage. */

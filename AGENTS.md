@@ -5,11 +5,12 @@ This is an educational Laravel project for learning Retrieval-Augmented Generati
 # Current architecture
 
 - `documents/*.txt` is the knowledge source.
-- `embed:documents` imports files, creates paragraph-based chunks, and stores 768-dimensional embeddings.
+- `embed:documents` imports files using the active chunking and embedding profiles from `config/rag.php`.
 - PostgreSQL stores documents and chunks; pgvector performs cosine vector search.
 - Ollama provides the embedding and text-generation models through Laravel AI SDK.
 - `rag:ask` retrieves relevant chunks and asks the model to answer only from that context.
 - `rag:evaluate` runs a small golden dataset from `config/rag-evaluation.php`.
+- `rag:experiment` generates the cartesian product of every configured chunking option and embedding input mode, rebuilds each index, then compares retrieval profiles, thresholds, and limits.
 
 # Evaluation
 
@@ -20,6 +21,20 @@ Evaluation code belongs in `app/Services/RagEvaluation`; keep it separate from t
 - The judge receives one case at a time: question, reference answer, retrieved context, and generated answer.
 - Do not ask an LLM to calculate deterministic metrics.
 - Keep `--retrieval-only` working so retrieval can be studied without generation or judging.
+- Experiments may clear `document_chunks`, but must restore the default index in a `finally` block.
+
+# Configurable RAG profiles
+
+- Production defaults and all registered strategies belong in `config/rag.php`.
+- Experiment matrices and the golden dataset belong in `config/rag-evaluation.php`.
+- RAG contracts belong in `app/Contracts/Rag`, and strategy factories belong in `app/Factories/Rag`.
+- Chunking and retrieval business rules belong in `app/Services/Rag/Chunking` and `app/Services/Rag/Retrieval`.
+- Chunking strategies implement `App\Contracts\Rag\ChunkingStrategy`.
+- `ChunkingStrategyFactory` resolves chunking implementations through Laravel's service container.
+- Retrieval strategies implement `App\Contracts\Rag\RetrievalStrategy` and are resolved by `RetrievalStrategyFactory`.
+- Embedding profiles declare model, dimensions, document prefix, and query prefix.
+- The current pgvector column has 768 dimensions; a profile with another dimension requires a compatible schema or a versioned index.
+- Add future hybrid, reranking, page, or semantic strategies as new registered implementations instead of branching in the experiment runner.
 
 # Project conventions
 
@@ -38,6 +53,7 @@ docker compose exec app php artisan embed:documents
 docker compose exec app php artisan rag:ask "Question"
 docker compose exec app php artisan rag:evaluate --retrieval-only
 docker compose exec app php artisan rag:evaluate
+docker compose exec app php artisan rag:experiment
 docker compose exec app php artisan test
 ```
 
